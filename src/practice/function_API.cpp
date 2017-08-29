@@ -2,9 +2,11 @@
 
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
+#include <stdlib.h>
 #include "function_API.h"
 
-int main(int argc, char * argv[])
+int main_1(int argc, char * argv[])
 {
 	char str1[10] = "01ABCDEF";
 	char str2[10];
@@ -80,4 +82,31 @@ char *memcpy_J(char *dest, const char *src, size_t n)
 	return destStr;
 }
 
+int main(int argc, char *argv[])
+{
+	typedef struct
+	{
+		int num;
+		char *message;
+	}Unit_t;
+
+	Unit_t *p = malloc(sizeof(Unit_t));
+	if (p == NULL)
+	{
+		printf("Out of memory!!\n");
+		exit(1);
+	}
+
+	p->num = 2;
+	p->message = malloc(20);
+	strcpy(p->message, "Hello world");
+
+	printf("num = %d,\tmessage = %s\n", p->num, p->message);
+
+	free(p->message);
+	free(p);
+	p = NULL;
+	
+	return 0;
+}
 
