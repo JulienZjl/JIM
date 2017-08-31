@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
 		char *message;
 	}Unit_t;
 
-	Unit_t *p = malloc(sizeof(Unit_t));
+	Unit_t *p = (Unit_t *)malloc(sizeof(Unit_t));
 	if (p == NULL)
 	{
 		printf("Out of memory!!\n");
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
 	}
 
 	p->num = 2;
-	p->message = malloc(20);
+	p->message = (char *)malloc(20);
 	strcpy(p->message, "Hello world");
 
 	printf("num = %d,\tmessage = %s\n", p->num, p->message);
