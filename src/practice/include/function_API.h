@@ -1,7 +1,7 @@
 #ifndef __FUNCTION_API__
 #define __FUNCTION_API__
 
-#define printf printf()
+//#define printf printf()
 
 void strcpy_J(char *des, const char *src);
 char * strcpy_J2(char *dest, const char *src);
