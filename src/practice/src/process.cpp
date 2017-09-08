@@ -75,3 +75,16 @@ void function_pipe()
 	}
 
 }
+
+void function_alarm()
+{
+	int i;
+
+	alarm(1);
+
+	for (i = 0; 1; i++)
+	{
+		printf("alarm!\n");
+		msleep(100);
+	}
+}

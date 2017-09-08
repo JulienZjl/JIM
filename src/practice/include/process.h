@@ -5,5 +5,6 @@
 
 void function_fork();
 void function_pipe();
+void function_alarm();
 
 #endif
